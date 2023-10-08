@@ -1,21 +1,11 @@
-<?php
-use App\Models\Brand;
-//status=0--> Rac
-//status=1--> Hiện thị lên trang người dùng
-//
-//SELECT * FROM brand wher status!=0 and id=1 order by created_at desc
-
-$list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
-?>
 <?php require_once "../views/backend/header.php";?>
       <!-- CONTENT -->
-<form action ="index.php?option=brand&cat=process" method="post" enctype="multipart/form-data">
-<div class="content-wrapper">
+      <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Tất cả thương hiệu</h1>
+                     <h1 class="d-inline">Tất cả chủ đề</h1>
                   </div>
                </div>
             </div>
@@ -24,7 +14,7 @@ $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
          <section class="content">
             <div class="card">
                <div class="card-header text-right">
-                  <button class="btn btn-sm btn-success" type="submit" name ="THEM">
+                  <button class="btn btn-sm btn-success">
                      <i class="fa fa-save" aria-hidden="true"></i>
                      Lưu
                   </button>
@@ -33,20 +23,12 @@ $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
                   <div class="row">
                      <div class="col-md-4">
                         <div class="mb-3">
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên chủ đề (*)</label>
                            <input type="text" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label>Slug</label>
                            <input type="text" name="slug" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                           <label>Mô tả</label>
-                          <textarea name="description" class="form-control"></textarea>
-                        </div>
-                        <div class="mb-3">
-                           <label>Hình đại diện</label>
-                           <input type="file" name="image" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label>Trạng thái</label>
@@ -63,36 +45,28 @@ $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
                                  <th class="text-center" style="width:30px;">
                                     <input type="checkbox">
                                  </th>
-                                 <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên chủ đề</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>
                            <tbody>
-                          <?php if(count($list) > 0) : ?>
-                              <?php foreach($list as $item   ):?>
-                              <tr class="datarow">  
+                              <tr class="datarow">
                                  <td>
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/brand/<?=$item->image;?>" alt="<?$item->image;?>">
-                                 </td>
-                                 <td>
                                     <div class="name">
-                                      <?= $item->name ; ?> 
+                                       Tên chủ đề
                                     </div>
                                     <div class="function_style">
                                        <a href="#">Hiện</a> |
                                        <a href="#">Chỉnh sửa</a> |
-                                       <a href="../backend/brand_show.html">Chi tiết</a> |
+                                       <a href="../backend/topic_show.html">Chi tiết</a> |
                                        <a href="#">Xoá</a>
                                     </div>
                                  </td>
-                                 <td><?= $item->slug?></td>
+                                 <td>Slug</td>
                               </tr>
-                              <?php endforeach;?>
-                              <?php endif;?>
                            </tbody>
                         </table>
                      </div>
@@ -101,6 +75,5 @@ $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
             </div>
          </section>
       </div>
-</form>
       <!-- END CONTENT-->
       <?php require_once "../views/backend/footer.php";?>
