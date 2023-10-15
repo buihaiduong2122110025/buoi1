@@ -1,12 +1,38 @@
+<?php
+use App\Models\Post;
+
+//status=0--> Rac
+//status=1--> Hiện thị lên trang người dùng
+//
+//SELECT * FROM post wher status!=0 and id=1 order by created_at desc
+
+$list = post::where('status','!=',0)->orderBy('Created_at','DESC')->get();
+
+/*
+$list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
+ ->where([['post.status', '!=', 0],['post.type', '=', 'post']])
+ ->orderBy('post.created_at', 'desc')
+ ->select("post.*", "topic.name as topic_name")
+ ->get();
+*/
+ $list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
+ ->where('post.status', '!=', 0)
+ ->orderBy('post.created_at', 'desc')
+ ->select("post.*", "topic.name as topic_name")
+ ->get();
+
+?>
 <?php require_once "../views/backend/header.php";?>
       <!-- CONTENT -->
+      <form action ="index.php?option=post&cat=create" method="post" enctype="multipart/form-data">
+
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
                      <h1 class="d-inline">Tất cả bài viết</h1>
-                     <a href="post_create.html" class="btn btn-sm btn-primary">Thêm bài viết</a>
+                     <a href="index.php?option=post&cat=create" class="btn btn-sm btn-primary">Thêm bài viết</a>
                   </div>
                </div>
             </div>
@@ -26,30 +52,50 @@
                            </th>
                            <th class="text-center" style="width:130px;">Hình ảnh</th>
                            <th>Tiêu đề bài viết</th>
-                           <th>Tên danh mục</th>
+                           <th>Tên chủ đề</th>
                         </tr>
                      </thead>
                      <tbody>
+                     <?php if(count($list) > 0) : ?>
+                              <?php foreach($list as $item   ):?>
                         <tr class="datarow">
                            <td>
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/post.jpg" alt="post.jpg">
+                           <img src="../public/images/post/<?=$item->image;?>" alt="<?$item->image;?>">
                            </td>
                            <td>
-                              <div class="name">
-                                 Tiêu đề bài viết
+                              <div class="title">
+                              <?= $item->title ; ?> 
+                             
                               </div>
                               <div class="function_style">
-                                 <a href="#">Hiện</a> |
-                                 <a href="#">Chỉnh sửa</a> |
-                                 <a href="../backend/post_show.html">Chi tiết</a> |
-                                 <a href="#">Xoá</a>
+                              <?php if ($item->status == 1) :?>
+                                       <a href="index.php?option=post&cat=status&id=<?=$item->id;?>
+                                       "class="btn btn-success btn-xs"><i class="fas fa-toggle-on"></i>Hiện
+                                    </a>
+                                    <?php else :?>
+                                       <a href="index.php?option=post&cat=status&id=<?=$item->id;?>
+                                       "class="btn btn-danger btn-xs"><i class="fas fa-toggle-off"></i>Ẩn 
+                                       </a>  
+                                       <?php endif;?>
+
+                                       <a href="index.php?option=post&cat=edit&id=<?=$item->id;?>
+                                       "class="btn btn-primary btn-xs"><i class="fas fa-edit"></i>Chỉnh sửa</a> 
+                                       <a href="index.php?option=post&cat=show&id=<?=$item->id;?>
+                                       "class="btn btn-info btn-xs"><i class="fas fa-eye"></i>Chi tiết</a> 
+                                       <a href="index.php?option=post&cat=delete&id=<?=$item->id;?>
+                                       "class="btn btn-danger btn-xs"><i class="fas fa-trash"></i>Xoá</a>
                               </div>
                            </td>
-                           <td>Tên chủ đề</td>
+                           <td><div class="topic_name">
+                              <?= $item->topic_name ; ?> 
+                             
+                              </div></td>
                         </tr>
+                        <?php endforeach;?>
+                              <?php endif;?>
                      </tbody>
                   </table>
                </div>

@@ -1,12 +1,23 @@
+<?php
+
+//status=0--> Rac
+//status=1--> Hiện thị lên trang người dùng
+//
+//SELECT * FROM brand wher status!=0 and id=1 order by created_at desc
+
+
+?>
 <?php require_once "../views/backend/header.php";?>
       <!-- CONTENT -->
+      <form action ="index.php?option=customer&cat=process" method="post" enctype="multipart/form-data">
+
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
                      <h1 class="d-inline">Tất cả khách hàng</h1>
-                     <a href="customer_create.html" class="btn btn-sm btn-primary">Thêm khách hàng</a>
+                     <a href="index.php?option=customer&cat=create" class="btn btn-sm btn-primary">Thêm khách hàng</a>
                   </div>
                </div>
             </div>
@@ -31,16 +42,17 @@
                         </tr>
                      </thead>
                      <tbody>
+             
                         <tr class="datarow">
                            <td>
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/user.jpg" alt="user.jpg">
+                         
                            </td>
                            <td>
                               <div class="name">
-                                 Hồ Diên Lợi
+                              Bui hai Duong
                               </div>
                               <div class="function_style">
                                  <a href="#">Hiện</a> |
@@ -52,11 +64,13 @@
                            <td>0987654331</td>
                            <td>dienloisoft@gmail.com</td>
                         </tr>
+         
                      </tbody>
                   </table>
                </div>
             </div>
          </section>
-      </div>
+</div>
+      </form>
       <!-- END CONTENT-->
       <?php require_once "../views/backend/footer.php";?>

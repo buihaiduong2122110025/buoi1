@@ -1,5 +1,16 @@
+<?php
+use App\Models\Contact;
+//status=0--> Rac
+//status=1--> Hiện thị lên trang người dùng
+//
+//SELECT * FROM brand wher status!=0 and id=1 order by created_at desc
+
+$list = Contact::where('status','!=',0)->orderBy('Created_at','DESC')->get();
+?>
 <?php require_once "../views/backend/header.php";?>
       <!-- CONTENT -->
+      <form action ="index.php?option=contact&cat=process" method="post" enctype="multipart/form-data">
+
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
@@ -14,7 +25,7 @@
          <section class="content">
             <div class="card">
                <div class="card-header text-right">
-                  Noi dung
+                 Nội Dung
                </div>
                <div class="card-body">
                   <table class="table table-bordered" id="mytable">
@@ -23,10 +34,13 @@
                            <th class="text-center" style="width:30px;">
                               <input type="checkbox">
                            </th>
+                           <th>User_id</th>
                            <th>Họ tên</th>
-                           <th>Điện thoại</th>
                            <th>Email</th>
+                           <th>Điện thoại</th>
                            <th>Tiêu đề</th>
+                           <th>Nội Dung</th>
+                           
                         </tr>
                      </thead>
                      <tbody>
@@ -35,8 +49,7 @@
                               <input type="checkbox">
                            </td>
                            <td>
-                              <div class="name">
-                                 Hồ Diên Lơij
+                              1
                               </div>
                               <div class="function_style">
                                  <a href="#">Hiện</a> |
@@ -45,9 +58,11 @@
                                  <a href="#">Xoá</a>
                               </div>
                            </td>
-                           <td>098765432</td>
-                           <td>dienloisoft@gmail.com</td>
-                           <td>Tieu đề</td>
+                           <td>      Bùi Hải Dương</td>
+                           <td>dayduongtui@gmail.com</td>
+                           <td> 09819929900</td>
+                           <td>Chủ shop </td>
+                           <td> bán hàng đa cấp</td>
                         </tr>
                      </tbody>
                   </table>
@@ -55,5 +70,7 @@
             </div>
          </section>
       </div>
+      <form action ="index.php?option=brand&cat=process" method="post" enctype="multipart/form-data">
+
       <!-- END CONTENT-->
       <?php require_once "../views/backend/footer.php";?>
