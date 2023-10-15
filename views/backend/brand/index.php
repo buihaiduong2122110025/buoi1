@@ -76,7 +76,7 @@ $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/brand/<?=$item->image;?>" alt="<?$item->image;?>">
+                                 <img class="img-fluid" src="../public/images/brand/<?= $item->image; ?>" alt="<?= $item->image; ?>">                              </td>
                                  </td>
                                  <td>
                                     <div class="name">

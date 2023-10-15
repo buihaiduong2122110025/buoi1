@@ -66,8 +66,7 @@ $list = Product::join('category', 'product.category_id', '=', 'category.id')
                                  <input type="checkbox">
                               </td>
                               <td>
-                              <img src="../public/images/product/<?=$item->image;?>" alt="<?$item->image;?>">
-                              </td>
+                              <img class="img-fluid" src="../public/images/product/<?= $item->image; ?>" alt="<?= $item->image; ?>">                              </td>
                               <td>
                                  <div class="name">
                                  <?= $item->name ; ?> 

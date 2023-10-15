@@ -56,10 +56,10 @@ $list = user::where('status','!=',0)->orderBy('Created_at','DESC')->get();
                               <input type="checkbox">
                            </td>
                            <td>
-                           <img src="../public/images/user/<?=$item->image;?>" alt="<?$item->image;?>">
+                           <img class="img-fluid" src="../public/images/user/<?= $item->image; ?>" alt="<?= $item->image; ?>">                              </td>
                            </td>
                            <td>
-                              <div class="name">
+                              <div class="name"></div>
                               <?= $item->name ; ?> 
 
                               </div>

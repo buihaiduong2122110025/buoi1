@@ -63,10 +63,10 @@ $list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
                               <input type="checkbox">
                            </td>
                            <td>
-                           <img src="../public/images/post/<?=$item->image;?>" alt="<?$item->image;?>">
+                           <img class="img-fluid" src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->image; ?>">                              </td>
                            </td>
                            <td>
-                              <div class="title">
+                              <div class="title"></div>
                               <?= $item->title ; ?> 
                              
                               </div>

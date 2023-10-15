@@ -90,7 +90,7 @@ foreach ($list as $cat)
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                 <img src="../public/images/category/<?=$item->image;?>" alt="<?$item->image;?>">
+                                 <img class="img-fluid" src="../public/images/category/<?= $item->image; ?>" alt="<?= $item->image; ?>">                              </td>
                                  </td>
                                  <td>
                                     <div class="name">
