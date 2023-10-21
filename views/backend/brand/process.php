@@ -30,17 +30,21 @@ if(isset($_POST['THEM']))
     //luu vao csdl
     //ínet
     $brand->save();
+    MyClass::set_flash('message', ['type' => 'success', 'msg' => 'Thêm thành công']);
+ 
     //
     header("location:index.php?option=brand");
 }
-
-
-
-
-
+    
 if(isset($_POST['CAPNHAT']))
 {
-    $brand=new Brand();
+    $id= $_POST['id'];
+    $brand=Brand::find($id);
+    if($brand == null){
+        MyClass::set_flash('message', ['type' => 'danger', 'msg' => 'Lỗi Trang 404']);
+
+        header("location:index.php?option=brand");
+    }
     //lấy từ form
     $brand->name = $_POST['name'];
     $brand->slug =(strlen($_POST['slug'])>0) ? $_POST['slug']: MyClass::str_slug($_POST['name']);
@@ -48,6 +52,10 @@ if(isset($_POST['CAPNHAT']))
     $brand->status = $_POST['status'];
     //Xử lí uploadfile
     if(strlen($_FILES['image']['name'])>0){
+
+        //xóa hình cũ
+
+        //thêm hình mới
         $target_dir = "../public/images/brand/";
         $target_file= $target_dir . basename($_FILES["image"]["name"]);
         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -59,12 +67,19 @@ if(isset($_POST['CAPNHAT']))
         }
     }
     //tư sinh ra
-    $brand->created_at = date('Y-m-d-H:i:s');
-    $brand->created_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
+    $brand->updated_at = date('Y-m-d-H:i:s');
+    $brand->updated_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($brand);
     //luu vao csdl
     //ínet
     $brand->save();
     //
+    MyClass::set_flash('message', ['type' => 'success', 'msg' => 'Cật Nhật thành công']);
+
     header("location:index.php?option=brand");
 }
+
+
+
+
+

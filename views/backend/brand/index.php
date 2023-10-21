@@ -1,12 +1,14 @@
-<?php
-use App\Models\Brand;
-//status=0--> Rac
-//status=1--> Hiện thị lên trang người dùng
-//
-//SELECT * FROM brand wher status!=0 and id=1 order by created_at desc
+   <?php
+use App\Libraries\MyClass;
 
-$list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
-?>
+   use App\Models\Brand;
+   //status=0--> Rac
+   //status=1--> Hiện thị lên trang người dùng
+   //
+   //SELECT * FROM brand wher status!=0 and id=1 order by created_at desc
+
+   $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
+   ?>
 <?php require_once "../views/backend/header.php";?>
       <!-- CONTENT -->
 <form action ="index.php?option=brand&cat=process" method="post" enctype="multipart/form-data">
@@ -23,13 +25,24 @@ $list = brand::where('status','!=',0)->orderBy('Created_at','DESC')->get();
          <!-- Main content -->
          <section class="content">
             <div class="card">
-               <div class="card-header text-right">
+               <div class="card-header ">
+                <div class="row">
+                  <div class="col-md-6">
+                  <a href="index.php?option=brand&cat=trash" class="btn btn-danger btn-sm">Thùng rác</a>
+                  </div>
+                  <div class="col-md-6 text-right">
                   <button class="btn btn-sm btn-success" type="submit" name ="THEM">
                      <i class="fa fa-save" aria-hidden="true"></i>
                      Lưu
                   </button>
+                  </div>   
+                </div>
                </div>
                <div class="card-body">
+
+               <?php require_once "../views/backend/message.php";?>
+
+
                   <div class="row">
                      <div class="col-md-4">
                         <div class="mb-3">

@@ -1,5 +1,6 @@
 <?php
 use App\Models\Brand;
+use App\Libraries\MyClass;
 
 $id = $_REQUEST['id'];
 $brand = Brand::find($id);
@@ -23,50 +24,66 @@ if($brand == null){
          </section>
          <!-- Main content -->
          <section class="content">
-            <div class="card">
-               <div class="card-header text-right">
-                  <button class="btn btn-sm btn-success" type="submit" name ="CAPNHAP">
-                     <i class="fa fa-save" aria-hidden="true"></i>
-                     Lưu
-                  </button>
-                  <a href="index.php?option=brand" class="btn btn-sm btn-info">
-                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                     Về danh sách
-                  </a>
-               </div>
-               <div class="card-body">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="mb-3">
-                           <label>Tên thương hiệu (*)</label>
-                           <input type="text" value="<?=$brand->name;?>" name="name" class="form-control">
-                        </div>   
-                        <div class="mb-3">
-                           <label>Slug</label>
-                           <input type="text"value="<?=$brand->slug;?>" name="slug" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                           <label>Mô tả</label>
-                          <textarea name="description" class="form-control"><?=$brand->description;?></textarea>
-                        </div>
-                        <div class="mb-3">
-                           <label>Hình đại diện</label>
-                           <input type="file" name="image" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                           <label>Trạng thái</label>
-                           <select name="status" class="form-control">
-                              <option value="1"<?=($brand->status==1)?'selected':'';?>>Xuất bản</option>
-                              <option value="2"<?=($brand->status==2)?'selected':'';?>    >Chưa xuất bản</option>
-                           </select>
-                        </div>
-                     </div>
-                   
-                  </div>
-               </div>
+
+<!-- Default box -->
+  <div class="card">
+        <div class="card-header">
+        <div class="row">
+            <div class="col md-12 text-right">
+              <button name="CAPNHAT" type="submit" class="btn btn-sm btn-primary">
+                <i class="fas fa-save"></i> Lưu[Cập nhật]
+              </button>
+              <a class="btn btn-sm btn-success" href="index.php?option=brand">
+                <i class="fas fa-arrow-left"></i> Quay về danh sách
+              </a>
             </div>
-         </section>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <input type="hidden" name="id" value="<?=$brand->id; ?>">
+            <div class="col md-9">
+              <div class="mb-3">
+                <label>Tên thương hiệu</label>
+                <input name="name" id="name" type="text" value="<?=$brand->name; ?>" class="form-control">  
+              </div>
+              <div class="mb-3">
+                <label >Mô tả </label>
+                <textarea name="description" id="description"  class="form-control" ><?=$brand->description; ?></textarea>
+              </div>
+              <div class="mb-3">
+                <label >slug</label>
+                <textarea name="slug" id="slug" class="form-control" ><?=$brand->slug; ?></textarea>
+              </div>
+            </div>
+            
+          
+              <div class="mb-3">
+                <label >Hình ảnh</label>
+                <input type="file" name="image" class="form-control">
+                <img src="../public/images/brand/<?=$brand->image; ?>">
+              </div>
+              <div class="mb-3">
+              <label for="status">Trạng thái</label>
+              <select name="status" id="status" class="form-control">
+                <option value="1" <?=($brand->status==2)?'selected':'';?>>Xuất bản</option>
+                <option value="2" <?=($brand->status==1)?'selected':'';?>>Chưa xuất bản</option>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          
+        </div>
+        <!-- /.card-footer-->
       </div>
-</form>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+  </form>
       <!-- END CONTENT-->
       <?php require_once "../views/backend/footer.php";?>
