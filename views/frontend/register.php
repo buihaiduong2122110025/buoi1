@@ -35,7 +35,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="login.html">
                            <i class="fa fa-phone-square" aria-hidden="true"></i>
-                           0987654321
+                           098199200
                         </a>
                      </li>
                      <li class="nav-item">
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="register.html">Đăng ký</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Trương Thành Đạt</a>
+                        <a class="nav-link" href="profile.html">Bùi Hải Dương</a>
                      </li>
                   </ul>
                </div>
