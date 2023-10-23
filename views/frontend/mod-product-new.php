@@ -10,7 +10,7 @@ $mod_list_product = Product::where('status','=',1)->orderBy('created_at','DESC')
                      <div class="product-item border">
                         <div class="product-item-image">
                            <a href="index.php?option=product&slug=<?=$pro->slug; ?>">
-                              <img src="../public/images/product/<?=$pro->image; ?>" class="img-fluid" alt="<?=$pro->image; ?>">
+                              <img src="public//images/product/<?=$pro->image; ?>" class="img-fluid" alt="<?=$pro->image; ?>">
                            </a>
                         </div>
                         <h2 class="product-item-name text-main text-center fs-5 py-1">
