@@ -25,7 +25,7 @@
             $password = sha1($_POST['password']);
             $args = [
                 ['password','=', $password],    
-                ['roles','=','admin'],
+                ['roles','=','1'],
                 ['status','=',1],               
             ];
             if(filter_var($username, FILTER_VALIDATE_EMAIL)){

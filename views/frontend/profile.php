@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Đăng nhập</title>
+   <title>Thông tin tài khoản</title>
    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="../public/fontawesome/css/all.min.css">
    <link rel="stylesheet" href="../public/css/frontend.css">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-   <section class="hdl-header">
+   <section class="bhd-header">
       <div class="container">
          <div class="row">
             <div class="col-6 col-sm-6 col-md-2 py-1">
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="register.html">Đăng ký</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Hồ Diên Lợi</a>
+                        <a class="nav-link" href="profile.html">Trương Thành Đạt</a>
                      </li>
                   </ul>
                </div>
@@ -64,7 +64,7 @@
          </div>
       </div>
    </section>
-   <section class="hdl-mainmenu bg-main">
+   <section class="bhd-mainmenu bg-main">
       <div class="container">
          <div class="row">
             <div class="col-12 col-md-12">
@@ -130,41 +130,60 @@
                <li class="breadcrumb-item">
                   <a class="text-main" href="index.html">Trang chủ</a>
                </li>
-               <li class="breadcrumb-item active" aria-current="page">
-                  Đăng nhập
-               </li>
+               <li class="breadcrumb-item active" aria-current="page">Thông tin tài khoản</li>
             </ol>
          </nav>
       </div>
    </section>
-   <section class="hdl-maincontent py-2">
-      <form action="login.html" method="post" name="logincustomer">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-4">
-                  <p>Để gửi bình luận, liên hệ hay để mua hàng cần phải có tài khoản</p>
-               </div>
-               <div class="col-md-8">
-                  <div class="mb-3">
-                     <label for="username" class="text-main">Tên tài khoản (*)</label>
-                     <input type="text" name="username" id="username" class="form-control"
-                        placeholder="Nhập tài khoản đăng nhập" required>
-                  </div>
-                  <div class="mb-3">
-                     <label for="password" class="text-main">Mật khẩu (*)</label>
-                     <input type="password" name="password" id="password" class="form-control" placeholder="Mật khẩu"
-                        required>
-                  </div>
-                  <div class="mb-3">
-                     <button class="btn btn-main" name="LOGIN">Đăng nhập</button>
-                  </div>
-                  <p><u class="text-main">Chú ý</u>: (*) Thông tin bắt buộc phải nhập</p>
-               </div>
+   <section class="bhd-maincontent py-2">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3 order-2 order-md-1">
+               <ul class="list-group mb-3 list-category">
+                  <li class="list-group-item bg-main py-3">Thông tin tài khoản</li>
+                  <li class="list-group-item">
+                     <a href="profile.html">Thông tin tài khoản</a>
+                  </li>
+                  <li class="list-group-item">
+                     <a href="profile.html">Quản lý đơn hàng</a>
+                  </li>
+                  <li class="list-group-item">
+                     <a href="profile_changepassword.html">Đổi mật khẩu</a>
+                  </li>
+                  <li class="list-group-item">
+                     <a href="profile.html">Thời trang thể thao</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-9 order-1 order-md-2">
+               <h1 class="fs-2 text-main">Thông tin tài khoản</h1>
+               <table class="table table-borderless">
+                  <tr>
+                     <td style="width:20%;">Tên tài khoản</td>
+                     <td>Trương Thành Đạt</td>
+                  </tr>
+                  <tr>
+                     <td style="width:20%;">Tên đăng nhập</td>
+                     <td>hodienloi <a href="profile_changepassword.html">Đổi mật khẩu</a> </td>
+                  </tr>
+                  <tr>
+                     <td style="width:20%;">Email</td>
+                     <td>dienloisoft@gmail.com</td>
+                  </tr>
+                  <tr>
+                     <td style="width:20%;">Điện thoại</td>
+                     <td>0987654321</td>
+                  </tr>
+                  <tr>
+                     <td style="width:20%;">Địa chỉ</td>
+                     <td>Số 20 - Tăng Nhơn Phú - Phước Long B - Quận 9 <a href="profile_edit.html">Đổi địa chỉ</a> </td>
+                  </tr>
+               </table>
             </div>
          </div>
-      </form>
+      </div>
    </section>
-   <section class="hdl-footer pb-4">
+   <section class="bhd-footer pb-4">
       <div class="container">
          <div class="row">
             <div class="col-md-4 pt-4">
@@ -226,7 +245,7 @@
    </section>
    <section class="dhl-copyright bg-dark py-3">
       <div class="container text-center text-white">
-         Thiết kế bởi: Hồ Diên Lợi - Phone: 0998765432
+         Thiết kế bởi: Trương Thành Đạt - Phone: 0971885850
       </div>
    </section>
 </body>

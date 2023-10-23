@@ -12,7 +12,7 @@
 </head>
 
 <body>
-   <section class="hdl-header">
+   <section class="bhd-header">
       <div class="container">
          <div class="row">
             <div class="col-6 col-sm-6 col-md-2 py-1">
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="register.html">Đăng ký</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Hồ Diên Lợi</a>
+                        <a class="nav-link" href="profile.html">Trương Thành Đạt</a>
                      </li>
                   </ul>
                </div>
@@ -64,7 +64,7 @@
          </div>
       </div>
    </section>
-   <section class="hdl-mainmenu bg-main">
+   <section class="bhd-mainmenu bg-main">
       <div class="container">
          <div class="row">
             <div class="col-12 col-md-12">
@@ -137,7 +137,7 @@
          </nav>
       </div>
    </section>
-   <section class="hdl-maincontent py-2">
+   <section class="bhd-maincontent py-2">
       <div class="container">
          <table class="table table-bordered">
             <thead>
@@ -250,7 +250,7 @@
          }
       </script>
    </section>
-   <section class="hdl-footer pb-4">
+   <section class="bhd-footer pb-4">
       <div class="container">
          <div class="row">
             <div class="col-md-4 pt-4">
@@ -260,10 +260,10 @@
                   mong muốn đem đến chất lượng tốt nhất cho khách hàng.
                </p>
                <p class="pt-1">
-                  Địa chỉ: B216A, KP Bình Phước, Phường Bình Nhâm, TP. Thuận An, Bình Dương
+                  Địa chỉ: An Quang Tây, Cát Khánh, Phù Cát, Bình Định
                </p>
                <p class="pt-1">
-                  Điện thoại: 0985 608 759(call, zalo) - Email: dienloisoft@gmail.com
+                  Điện thoại: 0971885850(fb, zalo) - Email: 0971885850a@gmail.com
                </p>
                <h3 class="widgettilte">MẠNG XÃ HỘI</h3>
                <div class="social my-3">
@@ -312,7 +312,7 @@
    </section>
    <section class="dhl-copyright bg-dark py-3">
       <div class="container text-center text-white">
-         Thiết kế bởi: Hồ Diên Lợi - Phone: 0998765432
+         Thiết kế bởi: Trương Thành Đạt - Phone: 0971885850
       </div>
    </section>
 </body>
