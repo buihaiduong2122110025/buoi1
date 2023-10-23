@@ -39,10 +39,17 @@ $list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
          </section>
          <!-- Main content -->
          <section class="content">
-            <div class="card">
-               <div class="card-header p-2">
-                  Noi dung
-               </div>
+         <div class="card-header">             
+                        <select name="" id="" class="form-control d-inline" style="width:100px;">
+                        <option value="">Xoá</option>
+                        </select>
+                        <button class="btn btn-sm btn-success" type ="submit" name ="THEM">Áp dụng</button>
+                     <div class="row">
+                     <div  div class="col-md-6">
+                        <a href="index.php?option=product">Tất cả</a> |
+                        <a href="index.php?option=brand&cat=trash" class="btn btn-danger btn-sm">Thùng rác</a>
+                     </div>
+                  </div>
                <div class="card-body p-2">
                   <table class="table table-bordered">
                      <thead>

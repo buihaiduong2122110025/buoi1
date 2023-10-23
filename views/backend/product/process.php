@@ -11,7 +11,7 @@ if(isset($_POST['THEM']))
     $product->slug =(strlen($_POST['slug'])>0) ? $_POST['slug']: MyClass::str_slug($_POST['name']);
     $product->detail = $_POST['detail'];
     $product->price = $_POST['price'];
-    $product->price_sale = $_POST['price_sale'];
+    $product->pricesale = $_POST['pricesale'];
     $product->category_id = $_POST['category_id'];
     $product->brand_id = $_POST['brand_id'];
     $product->description = $_POST['description'];
